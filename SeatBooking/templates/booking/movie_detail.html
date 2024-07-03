@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie.title }}</title>
+</head>
+<body>
+    <h1>{{ movie.title }}</h1>
+    <p>{{ movie.description }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <p>Release Date: {{ movie.release_date }}</p>
+    <h2>Showtimes</h2>
+    <ul>
+        {% for showtime in showtimes %}
+            <li>{{ showtime.show_time }} - <a href="{% url 'book_ticket' showtime.pk %}">Book Now</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

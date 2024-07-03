@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Ticket</title>
+</head>
+<body>
+    <h1>Book Ticket for {{ showtime.movie.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ showtime.movie.seats_available }}
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>
